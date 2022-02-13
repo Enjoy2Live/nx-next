@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "dev-launchers": "apps/dev-launchers",
+    "dev-launchers-e2e": "apps/dev-launchers-e2e"
+  }
+}
