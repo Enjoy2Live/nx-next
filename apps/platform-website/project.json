@@ -1,0 +1,61 @@
+{
+  "root": "apps/platform-website",
+  "sourceRoot": "apps/platform-website",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/platform-website",
+        "outputPath": "dist/apps/platform-website"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "platform-website:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "platform-website:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "platform-website:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/platform-website"],
+      "options": {
+        "jestConfig": "apps/platform-website/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/platform-website/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "deploy": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "cd dist/apps/platform-website && cp ../../../apps/platform-website/Dockerfile . && docker build -t platform-website . && docker run -p 3000:3000 platform-website"
+      }
+    }
+  },
+  "tags": []
+}
