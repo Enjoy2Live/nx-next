@@ -16,12 +16,12 @@ const DEFAULT_USER = {
   totalSeasonPoints: 0,
   availablePoints: 0,
   volunteerHours: 0,
-  discord: {
-    id: 0,
-    avatar: "",
-    username: "",
-    discriminator: "",
-  },
+  // discord: {
+  //   id: 0,
+  //   avatar: "",
+  //   username: "",
+  //   discriminator: "",
+  // },
 };
 
 // Built from this article: https://www.sitepoint.com/replace-redux-react-hooks-context-api/

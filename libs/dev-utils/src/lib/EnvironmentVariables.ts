@@ -22,7 +22,7 @@ export const env = () => {
     if (
       currentUrl.indexOf("staging") !== -1 ||
       currentUrl.indexOf("localhost") !== -1 ||
-      process.env.NODE_ENV == "development"
+      process.env['NODE_ENV'] === "development"
     ) {
       return STAGING;
     }
