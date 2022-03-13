@@ -1,5 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ThemeProvider } from 'styled-components';
+import { theme, UserDataProvider } from '@devlaunchers/utils';
 import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -8,9 +10,13 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to platform-website!</title>
       </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
+      <ThemeProvider theme={theme}>
+        <UserDataProvider>
+          <main className="app">
+            <Component {...pageProps} />
+          </main>
+        </UserDataProvider>
+      </ThemeProvider>
     </>
   );
 }

@@ -1,0 +1,43 @@
+{
+  "root": "libs/dev-ponents",
+  "sourceRoot": "libs/dev-ponents/src",
+  "projectType": "library",
+  "tags": ["components"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/dev-ponents",
+        "tsConfig": "libs/dev-ponents/tsconfig.lib.json",
+        "project": "libs/dev-ponents/package.json",
+        "entryFile": "libs/dev-ponents/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/dev-ponents/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/dev-ponents/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dev-ponents"],
+      "options": {
+        "jestConfig": "libs/dev-ponents/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

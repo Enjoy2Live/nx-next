@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "dev-ponents": "libs/dev-ponents",
+    "dev-utils": "libs/dev-utils",
     "ideas": "apps/ideas",
     "ideas-e2e": "apps/ideas-e2e",
     "platform-website": "apps/platform-website",

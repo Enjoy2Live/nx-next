@@ -1,9 +1,4 @@
-import styled from 'styled-components';
-
-const StyledPage = styled.div`
-  .page {
-  }
-`;
+import { Header } from "@devlaunchers/components";
 
 export function Index() {
   /*
@@ -12,7 +7,8 @@ export function Index() {
    * Note: The corresponding styles are in the ./index.styled-components file.
    */
   return (
-    <StyledPage>
+    <div>
+      <Header />
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
@@ -413,7 +409,7 @@ export function Index() {
           </p>
         </div>
       </div>
-    </StyledPage>
+    </div>
   );
 }
 
