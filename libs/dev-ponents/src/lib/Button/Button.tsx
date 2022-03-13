@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 
-interface ButtonProps {
+export interface ButtonProps {
   bgColor?: string
   textColor?: string
   marginTop?: number
@@ -36,7 +36,7 @@ const shadeColor = (color: string, percent: number): string => {
   return `#${RR}${GG}${BB}`;
 };
 
-const colorUnderButtons = (hexColor: string): string => {
+const colorUnderButtons = (hexColor: string): string | null => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexColor);
   return result
     ? `rgba(${parseInt(result[1], 16) - 102},${parseInt(result[2], 16) - 55},${parseInt(result[3], 16) - 14
@@ -44,7 +44,7 @@ const colorUnderButtons = (hexColor: string): string => {
     : null;
 };
 
-const onHoverBackgroundColor = (hexColor: string): string => {
+const onHoverBackgroundColor = (hexColor: string): string | null => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexColor);
   return result
     ? `rgb(${parseInt(result[1], 16) + 44},${parseInt(result[2], 16) + 44},${parseInt(result[3], 16) + 44
@@ -60,7 +60,7 @@ const Button = styled.a<ButtonProps>`
   width: ${({ width }) => `${width}em` || ""};
   border: 0px;
   border-bottom: 3px solid
-    ${({ theme, bgColor }: { theme: any, bgColor: string }) =>
+    ${({ theme, bgColor }) =>
     colorUnderButtons(bgColor || theme.colors.ACCENT_1)};
   cursor: pointer;
   font-size: ${({ fontSize }) => `${fontSize}rem` || "1.5rem"};

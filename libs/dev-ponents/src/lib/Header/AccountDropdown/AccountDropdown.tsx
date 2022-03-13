@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logout from "@devlaunchers/utils";
+import { Logout, User } from "@devlaunchers/utils";
 import { env } from "@devlaunchers/utils";
 import {
   AccountMenuDropdownItem,
@@ -7,7 +7,9 @@ import {
   MenuButton,
 } from "./StyledAccountDropdown";
 
-export default function AccountDropdown(props) {
+
+const AccountDropdown: React.FC<{userData: User}> = (props) => {
+  
   return (
     <div>
       {props?.userData?.id ? (
@@ -28,10 +30,11 @@ export default function AccountDropdown(props) {
           }
         ></AccountMenuDropdownButton>
       ) : (
-        <MenuButton fontSize="1.2rem" href={env().GOOGLE_AUTH_URL}>
+        <MenuButton fontSize={1.2} href={env().GOOGLE_AUTH_URL}>
           Sign In{" "}
         </MenuButton>
       )}
     </div>
   );
 }
+export default AccountDropdown;

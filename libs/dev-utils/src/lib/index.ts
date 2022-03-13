@@ -9,7 +9,7 @@ export { default as ValidateEmail } from "./ValidateEmail"
 export { env } from "./EnvironmentVariables"
 
 // Contexts
-export { UserDataProvider, useUserDataContext } from "./context/UserDataContext"
+export { UserDataProvider, useUserDataContext, User } from "./context/UserDataContext"
 
 // Images
 export { default as logo } from "./images/logo-monogram.png"

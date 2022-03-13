@@ -1,8 +1,15 @@
 import styled from "styled-components";
-import DropdownButton from "../../Dropdown";
+import * as DropdownButton from "../../Dropdown";
 import Button from "../../Button";
 
-export const AccountMenuDropdownButton = styled(DropdownButton)`
+
+interface AccountMenuDropdownItemProps {
+  width?: string;
+  fontSize?: string;
+  marginTop?: string;
+}
+
+export const AccountMenuDropdownButton = styled(DropdownButton.default)`
   @media (orientation: portrait) {
     display: none;
   }
@@ -14,7 +21,7 @@ export const MenuButton = styled(Button)`
   }
 `;
 
-export const AccountMenuDropdownItem = styled.a`
+export const AccountMenuDropdownItem = styled.a<AccountMenuDropdownItemProps>`
   font-family: ${({ theme }) => theme?.fonts?.headline}, sans-serif;
   background-color: #1c1c1c;
 

@@ -1,15 +1,19 @@
-import styled from "styled-components";
-import Button from "../Button";
+import styled, { StyledComponent } from "styled-components";
+import * as Button from "../Button";
+
+interface RoomsProps {
+  isOpen: boolean;
+}
 
 export const Wrapper = styled.div`
   position: relative;
   display: inline-block;
 `;
-export const Toggle = styled(Button)`
+export const Toggle = styled(Button.default)`
   padding-left: 2rem;
   padding-right: 2rem;
 `;
-export const Rooms = styled.div`
+export const Rooms = styled.div<RoomsProps>`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: absolute;
   right: 50%;
