@@ -1,7 +1,11 @@
 {
   "version": 2,
   "projects": {
-    "dev-launchers": "apps/dev-launchers",
-    "dev-launchers-e2e": "apps/dev-launchers-e2e"
+    "dev-ponents": "libs/dev-ponents",
+    "dev-utils": "libs/dev-utils",
+    "ideas": "apps/ideas",
+    "ideas-e2e": "apps/ideas-e2e",
+    "platform-website": "apps/platform-website",
+    "platform-website-e2e": "apps/platform-website-e2e"
   }
 }

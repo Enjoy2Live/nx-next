@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@dev-launchers/ideas-app": ["libs/ideas-app/src/index.ts"],
+      "@dev-launchers/test": ["libs/test/src/index.ts"],
+      "@devlaunchers/components": ["libs/dev-ponents/src/index.ts"],
+      "@devlaunchers/utils": ["libs/dev-utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
